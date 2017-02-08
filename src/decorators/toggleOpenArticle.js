@@ -3,17 +3,16 @@ import React from "react";
 export default (Component)=> class WrappedComponent extends Component {
 
     state = {
-        openArticleId: null,
-        prevArticleId:null
+        openArticleId: null
     }
 
     toggleOpenArticle = openArticleId => ev => {
         ev && ev.preventDefault && ev.preventDefault()
-        //хотел сохранять предыдущее состояние и если повторяется возвращать null
-        //но пока не работает
-        this.state.prevArticleId != openArticleId ?
-            this.setState({prevArticleId:this.state.openArticleId,openArticleId:openArticleId}):
-            this.setState({null})
+
+        this.state.openArticleId == null ||
+        (this.state.openArticleId != null && this.state.openArticleId != openArticleId) ?
+            this.setState({openArticleId: openArticleId}) :
+            this.setState({openArticleId: null})
     }
 
     render() {

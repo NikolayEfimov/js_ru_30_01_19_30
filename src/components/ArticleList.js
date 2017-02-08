@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from "react";
 import Article from "./Article";
-import toggleOpenArticle from "../decorators/toggleOpenArticle"
+import toggleOpenArticle from "../decorators/toggleOpenArticle";
 class ArticleList extends Component {
 
     static propTypes = {
