@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Comment from './Comment'
+import CommentForm from './CommentForm.js'
 
 class CommentList extends Component {
     static propTypes = {
@@ -31,6 +32,8 @@ class CommentList extends Component {
             <div>
                 <a href="#" onClick={this.toggleOpen}>{actionText} comments</a>
                 {this.getBody()}
+                <CommentForm/>
+
             </div>
         )
     }
