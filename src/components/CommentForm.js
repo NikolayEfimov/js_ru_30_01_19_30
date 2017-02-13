@@ -12,6 +12,7 @@ export default class CommentForm extends Component {
          после отправки формы теряется
          state активной открытой статьи в ArticleList
          а при "button" - нет. Хотя setState и там и там происходит*/
+        //по submit у тебя страница перезагружается, надо preventDefault делать
         return <div>
             <form>
                 <label>
