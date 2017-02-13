@@ -14,12 +14,12 @@ class CommentList extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-       // console.log('---', this.props, nextProps)
+        console.log('---', this.props, nextProps)
     }
 
 
     componentWillUnmount() {
-        //console.log('---', 'unmounting')
+        console.log('---', 'unmounting')
     }
 
     state = {

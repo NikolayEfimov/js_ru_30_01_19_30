@@ -8,6 +8,10 @@ export default class CommentForm extends Component {
     }
 
     render() {
+        /*почему при типе "submit"
+         после отправки формы теряется
+         state активной открытой статьи в ArticleList
+         а при "button" - нет. Хотя setState и там и там происходит*/
         return <div>
             <form>
                 <label>
@@ -26,6 +30,7 @@ export default class CommentForm extends Component {
                            onChange={this.commentTextHandle}
                     />
                 </label>
+
                 <input type="submit" value="Submit" onClick={this.handleSubmit}/>
             </form>
         </div>

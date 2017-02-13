@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import DayPicker, { DateUtils } from 'react-day-picker';
-
 import 'react-day-picker/lib/style.css';
 
 
@@ -40,7 +39,6 @@ export default class Calendar extends React.Component {
                 </p>
                 }
                 <DayPicker
-                    numberOfMonths={ 2 }
                     selectedDays={ day => DateUtils.isDayInRange(day, { from, to }) }
                     onDayClick={ this.handleDayClick }
                 />
