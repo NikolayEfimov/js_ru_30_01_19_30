@@ -1,5 +1,15 @@
-import {INCREMENT, DELETE_ARTICLE, CHANGE_DATE_RANGE, CHANGE_SELECTION, LOAD_ALL_ARTICLES, START, SUCCESS, FAIL} from '../constants'
-import $ from 'jquery'
+import {
+    INCREMENT,
+    DELETE_ARTICLE,
+    CHANGE_DATE_RANGE,
+    CHANGE_SELECTION,
+    LOAD_ALL_ARTICLES,
+    START,
+    SUCCESS,
+    FAIL,
+    ADD_NEW_COMMENT
+} from "../constants";
+import $ from "jquery";
 
 
 export function increment() {
@@ -13,21 +23,21 @@ export function increment() {
 export function deleteArticle(id) {
     return {
         type: DELETE_ARTICLE,
-        payload: { id }
+        payload: {id}
     }
 }
 
 export function changeDateRange(dateRange) {
     return {
         type: CHANGE_DATE_RANGE,
-        payload: { dateRange }
+        payload: {dateRange}
     }
 }
 
 export function changeSelection(selected) {
     return {
         type: CHANGE_SELECTION,
-        payload: { selected }
+        payload: {selected}
     }
 }
 
@@ -55,5 +65,15 @@ export function loadAllArticlesThunk() {
                     error
                 }))
         }, 1000)
+    }
+}
+
+export function generateComment(user, text) {
+    return {
+        type: ADD_NEW_COMMENT,
+        payload: {
+            text: text,
+            user: user
+        }
     }
 }
