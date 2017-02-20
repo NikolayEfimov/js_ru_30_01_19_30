@@ -9,16 +9,15 @@ export default (state = defaultState, action) => {
 
     switch (type) {
         case ADD_NEW_COMMENT:
-            debugger
+            let newId = action.id
             console.log("in reducer: ADD_NEW_COMMENT")
             console.log(payload)
             let newState = {...state}
             console.log(newState)
             let stateArr = mapToArr(newState)
             console.log(stateArr)
-            //пока так
             let newComment = {
-                "id": 123,
+                "id": newId,
                 "text": payload.text,
                 "user": payload.user
             }

@@ -1,14 +1,10 @@
-import {guidGenerator} from "../utils";
+import {ADD_NEW_COMMENT} from "../constants";
 
 export default store => next => action => {
-    console.log("in helper middleware")
-    if (!action.generateComment) return next(action)
+    const {type, ...rest} = action
+    if (type != ADD_NEW_COMMENT) return next(action)
 
-    //пока не разобрался как "добавлять что-то" в middleware
-    //так понимаю что параметром в next
-    debugger
-    let guid = guidGenerator
-    next({...rest, id: guid})
-    console.log("id from middleware")
+    let guid = Math.random().toString(16).slice(2)
+    next({...rest, type, id: guid})
 
 }
