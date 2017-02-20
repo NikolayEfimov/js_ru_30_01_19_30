@@ -8,6 +8,7 @@ export default (state = defaultState, action) => {
     const {type, payload} = action
 
     switch (type) {
+        //теперь id этого коммента нужно еще в статью добавить
         case ADD_NEW_COMMENT:
             let newId = action.id
             console.log("in reducer: ADD_NEW_COMMENT")
